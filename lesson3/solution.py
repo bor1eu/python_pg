@@ -1,18 +1,20 @@
 import os
 
 class FileReader:
-    def __init__(file):
+    def __init__(self, file):
         self.file = file
 
-    def read():
+    def read(self):
         try:
             with open(self.file, 'r') as file:
-                data = file.read()
-            return data
-        except FileNotFoundError:
-            return ''
+                return file.read()
+            
+        except IOError:
+            return ""
     
 
 
 if __name__ == "__main__":
-    pass
+    reader = FileReader('ttt.txt')
+    texxt = reader.read()
+    print(texxt)
